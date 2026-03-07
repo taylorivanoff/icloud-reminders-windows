@@ -2,7 +2,7 @@
   "name": "icloud-reminders",
   "description": "View your iCloud reminders in a native Windows application.",
   "author": { "name": "Taylor Ivanoff" },
-  "version": "1.0.9",
+  "version": "1.0.11",
   "repository": "https://github.com/taylorivanoff/icloud-reminders-windows",
   "main": "main.js",
   "scripts": { "start": "electron .", "release": "electron-builder --win --x64 --publish=never" },
@@ -14,6 +14,6 @@
     "publish": { "provider": "github", "owner": "taylorivanoff", "repo": "icloud-reminders-windows" },
     "protocols": { "name": "iCloud Reminders", "schemes": ["icloud-reminders"] }
   },
-  "dependencies": { "electron-store": "^8.2.0", "electron-updater": "^6.1.8" },
+  "dependencies": { "icloud-windows-base": "file:../icloud-windows-base", "electron-store": "^8.2.0", "electron-updater": "^6.1.8" },
   "devDependencies": { "electron": "^30.0.3", "electron-builder": "^24.13.3" }
 }
