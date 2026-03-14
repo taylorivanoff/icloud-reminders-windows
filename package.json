@@ -14,6 +14,6 @@
     "publish": { "provider": "github", "owner": "taylorivanoff", "repo": "icloud-reminders-windows" },
     "protocols": { "name": "iCloud Reminders", "schemes": ["icloud-reminders"] }
   },
-  "dependencies": { "icloud-windows-base": "file:../icloud-windows-base", "electron-store": "^8.2.0", "electron-updater": "^6.1.8" },
+  "dependencies": { "icloud-windows-base": "^1.0.12", "electron-store": "^8.2.0", "electron-updater": "^6.1.8" },
   "devDependencies": { "electron": "^30.0.3", "electron-builder": "^24.13.3" }
 }
