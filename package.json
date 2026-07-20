@@ -1,19 +1,48 @@
 {
   "name": "icloud-reminders",
   "description": "View your iCloud reminders in a native Windows application.",
-  "author": { "name": "Taylor Ivanoff" },
-  "version": "1.0.12",
+  "author": {
+    "name": "Taylor Ivanoff"
+  },
+  "version": "1.0.14",
   "repository": "https://github.com/taylorivanoff/icloud-reminders-windows",
   "main": "main.js",
-  "scripts": { "start": "electron .", "release": "electron-builder --win --x64 --publish=never" },
+  "scripts": {
+    "start": "electron .",
+    "release": "electron-builder --win --x64 --publish=never"
+  },
   "build": {
     "appId": "io.github.taylorivanoff.icloud-reminders",
     "productName": "iCloud Reminders",
-    "win": { "icon": "icon.png", "target": "nsis" },
-    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "include": "installer.nsh", "deleteAppDataOnUninstall": true },
-    "publish": { "provider": "github", "owner": "taylorivanoff", "repo": "icloud-reminders-windows" },
-    "protocols": { "name": "iCloud Reminders", "schemes": ["icloud-reminders"] }
+    "win": {
+      "icon": "icon.png",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "include": "installer.nsh",
+      "deleteAppDataOnUninstall": true
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "taylorivanoff",
+      "repo": "icloud-reminders-windows"
+    },
+    "protocols": {
+      "name": "iCloud Reminders",
+      "schemes": [
+        "icloud-reminders"
+      ]
+    }
   },
-  "dependencies": { "icloud-windows-base": "^1.0.12", "electron-store": "^8.2.0", "electron-updater": "^6.1.8" },
-  "devDependencies": { "electron": "^30.0.3", "electron-builder": "^24.13.3" }
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "electron-updater": "^6.1.8",
+    "icloud-windows-base": "github:taylorivanoff/icloud-windows-base#v1.0.14"
+  },
+  "devDependencies": {
+    "electron": "^30.0.3",
+    "electron-builder": "^24.13.3"
+  }
 }
