@@ -1,13 +1,11 @@
-# iCloud Reminders for Windows — Unofficial Desktop App
+# iCloud Reminders for Windows
 
 [![Release](https://img.shields.io/github/v/release/taylorivanoff/icloud-reminders-windows)](https://github.com/taylorivanoff/icloud-reminders-windows/releases)
 [![Downloads](https://img.shields.io/github/downloads/taylorivanoff/icloud-reminders-windows/total)](https://github.com/taylorivanoff/icloud-reminders-windows/releases)
 [![License](https://img.shields.io/github/license/taylorivanoff/icloud-reminders-windows)](LICENSE)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=flat&logo=buy-me-a-coffee)](https://buymeacoffee.com/taylorivanoff)
 
-Unofficial **iCloud Reminders for Windows** desktop app. Access iCloud Reminders from [icloud.com](https://www.icloud.com/) in a dedicated Electron client with system tray, auto-updates, and shared Apple ID authentication.
-
-Manage Apple Reminders on Windows with an unofficial iCloud desktop client — tray, auto-start, and shared login.
+iCloud Reminders desktop app for Windows. Access iCloud Reminders from [icloud.com](https://www.icloud.com/).
 
 ## Features
 
@@ -41,7 +39,7 @@ bun run release
 
 ## Keywords
 
-iCloud Reminders for Windows, Apple Reminders Windows app, iCloud Reminders desktop, unofficial iCloud Reminders PC client
+iCloud Reminders for Windows, Apple Reminders Windows app, iCloud Reminders desktop, iCloud Reminders PC client
 
 ## Contributing
 
