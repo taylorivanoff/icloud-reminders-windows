@@ -28,6 +28,8 @@ This app is **not affiliated with Apple**. It is an unofficial desktop wrapper a
 - Your Apple ID password is never collected by this app
 - Session cookies for `icloud.com` / `apple.com` are stored under this app’s `%APPDATA%` folder only
 
+<img width="1053" height="729" alt="{E7B388EB-2D14-40A2-ABC1-0DDD6072C374}" src="https://github.com/user-attachments/assets/8d06bf46-b356-449b-af2a-efaa452d98ec" />
+
 ## Development
 
 Requires Rust (MSVC), WebView2, and Bun. Sibling crates:
