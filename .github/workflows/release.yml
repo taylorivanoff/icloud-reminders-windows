@@ -117,9 +117,43 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Build
         working-directory: icloud-apps/icloud-reminders-windows
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         run: |
           bun install
           bun run release
+      - name: Generate latest.json
+        working-directory: icloud-apps/icloud-reminders-windows
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="${{ needs.check-version.outputs.version }}"
+          EXE=$(ls src-tauri/target/release/bundle/nsis/*-setup.exe | head -n1)
+          SIG_FILE="${EXE}.sig"
+          test -f "$SIG_FILE"
+          BASENAME=$(basename "$EXE")
+          # GitHub Releases rewrites spaces to dots in asset URLs.
+          ASSET_NAME="${BASENAME// /.}"
+          export VERSION
+          export PUB_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          export URL="https://github.com/taylorivanoff/icloud-reminders-windows/releases/download/v${VERSION}/${ASSET_NAME}"
+          export SIGNATURE=$(tr -d '\r\n' < "$SIG_FILE")
+          bun -e "
+            const fs = require('fs');
+            const out = {
+              version: process.env.VERSION,
+              notes: 'See the release notes for details.',
+              pub_date: process.env.PUB_DATE,
+              platforms: {
+                'windows-x86_64': {
+                  url: process.env.URL,
+                  signature: process.env.SIGNATURE,
+                },
+              },
+            };
+            fs.writeFileSync('src-tauri/target/release/bundle/nsis/latest.json', JSON.stringify(out, null, 2));
+          "
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ needs.check-version.outputs.version }}
@@ -128,6 +162,8 @@ jobs:
           fail_on_unmatched_files: true
           files: |
             icloud-apps/icloud-reminders-windows/src-tauri/target/release/bundle/nsis/*.exe
+            icloud-apps/icloud-reminders-windows/src-tauri/target/release/bundle/nsis/*.sig
+            icloud-apps/icloud-reminders-windows/src-tauri/target/release/bundle/nsis/latest.json
           body: |
             ## What's Changed
             ${{ steps.changelog.outputs.commits }}
