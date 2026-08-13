@@ -6,13 +6,15 @@
 
 iCloud Reminders desktop app for Windows. Loads [icloud.com/reminders](https://www.icloud.com/reminders) in a native **Tauri / WebView2** shell.
 
+<img width="1053" height="729" alt="{E7B388EB-2D14-40A2-ABC1-0DDD6072C374}" src="https://github.com/user-attachments/assets/8d06bf46-b356-449b-af2a-efaa452d98ec" />
+
 ## Features
 
-- **System tray** — close hides to tray; left-click toggles the window
-- **Safari user-agent** — Apple web session compatibility
-- **Cookie persistence** — stay signed in across restarts
-- **Start with Windows** — installer registers a login item
-- **Deep link** — `icloud-reminders://` protocol handler
+- **System tray** - close hides to tray; left-click toggles the window
+- **Safari user-agent** - Apple web session compatibility
+- **Cookie persistence** - stay signed in across restarts
+- **Start with Windows** - installer registers a login item
+- **Deep link** - `icloud-reminders://` protocol handler
 
 ## Installation
 
@@ -27,8 +29,6 @@ This app is **not affiliated with Apple**. It is an unofficial desktop wrapper a
 - You sign in on Apple’s own pages inside the WebView2 window
 - Your Apple ID password is never collected by this app
 - Session cookies for `icloud.com` / `apple.com` are stored under this app’s `%APPDATA%` folder only
-
-<img width="1053" height="729" alt="{E7B388EB-2D14-40A2-ABC1-0DDD6072C374}" src="https://github.com/user-attachments/assets/8d06bf46-b356-449b-af2a-efaa452d98ec" />
 
 ## Development
 
