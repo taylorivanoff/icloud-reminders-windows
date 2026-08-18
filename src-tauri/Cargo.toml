@@ -1,6 +1,6 @@
 [package]
 name = "icloud-reminders"
-version = "2.0.3"
+version = "2.0.4"
 description = "iCloud Reminders for Windows (Tauri)"
 authors = ["Taylor Ivanoff"]
 edition = "2021"
