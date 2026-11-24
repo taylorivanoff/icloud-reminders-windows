@@ -11,6 +11,7 @@ iCloud Reminders desktop app for Windows. Loads [icloud.com/reminders](https://w
 ## Features
 
 - **System tray** - close hides to tray; left-click toggles the window
+- **Refresh button** - titlebar button (and tray menu item) reloads reminders without restarting
 - **Safari user-agent** - Apple web session compatibility
 - **Cookie persistence** - stay signed in across restarts
 - **Start with Windows** - installer registers a login item
